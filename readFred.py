@@ -1,12 +1,12 @@
 # Parse a FRED query, which comes back from the web as an XML file
 # http://api.stlouisfed.org/docs/fred/
 
-import urllib
-from xml.dom import minidom
-
 # apiKey = YOUR API KEY
 
 def getFredSeries(seriesId, apiKey):
+	import urllib
+	from xml.dom import minidom
+	
 	fredUrl = 'https://api.stlouisfed.org/fred/series/observations?series_id=%s&api_key=%s' \
 		% (seriesId, apiKey)
 
